@@ -1,5 +1,7 @@
 // const MongoClient = require("mongodb");
 const mongoose = require("mongoose");
+const cors=require("cors")
+
 
 
 // const mongoose = require('mongoose');
@@ -65,6 +67,11 @@ mongoose.connect(mongoDB)
 
 const express = require('express')
 const app = express()
+app.use(cors({
+    origin:"*"
+}))
+
+
 app.use(express.json())
 app.get('/', function (req, res) {
 res.send('Hello World')
